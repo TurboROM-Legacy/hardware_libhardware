@@ -160,6 +160,12 @@ typedef struct power_module {
      */
     void (*setFeature)(struct power_module *module, feature_t feature, int state);
 
+    /*
+     * (*getFeature) is called to get the current value of a particular
+     * feature or capability from the hardware or PowerHAL
+     */
+    int (*getFeature)(struct power_module *module, feature_t feature);
+
 } power_module_t;
 
 
